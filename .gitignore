@@ -1,5 +1,6 @@
 # Ignore the .venv folder
 .venv/
+.env
 
 .DS_Store
 

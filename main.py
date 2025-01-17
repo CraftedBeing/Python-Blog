@@ -13,7 +13,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from functools import wraps
 from flask import abort
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 '''
 Make sure the required packages are installed: 
@@ -28,8 +31,12 @@ pip3 install -r requirements.txt
 This will install the packages from the requirements.txt for this project.
 '''
 
+secret_key = os.environ.get('SECRET_KEY')
+sql_uri = os.environ.get('SQLALCHEMY_DATABASE_URI')
+
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = secret_key
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
