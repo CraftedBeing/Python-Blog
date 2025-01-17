@@ -1,7 +1,7 @@
 # Ignore the .venv folder
 .venv/
 
-.DS_store
+.DS_Store
 
 #ignore post.db
 posts.db
